@@ -1,4 +1,4 @@
-import type { LevelRuleId } from './types';
+import type { LevelRuleId, LevelSpec } from './types';
 
 const GRID_SIZE = 5;
 export const TOTAL_CELLS = GRID_SIZE * GRID_SIZE; // 25
@@ -53,7 +53,7 @@ export function computeFlashingIndices(level: LevelRuleId): Set<number> {
 	return on;
 }
 
-export const levels = [
+export const levels: LevelSpec[] = [
 	{ level: 1, title: 'Even indices', description: 'Flash squares where index % 2 === 0', hint: 'Think parity (even/odd).' },
 	{ level: 2, title: 'Diagonals', description: 'Flash squares where row===col or row+col===4', hint: 'X shape across the grid.' },
 	{ level: 3, title: 'Prime numbers', description: 'Flash squares whose index is a prime number', hint: '2,3,5,7,11…' },
