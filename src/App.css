@@ -1,0 +1,86 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #0f1720;
+  --text: #e8eef8;
+  --muted: #91a4bf;
+  --primary: #6aa3ff;
+  --good: #2fd37a;
+  --bad: #ff5c5c;
+  --miss: #ffd166;
+}
+
+* { box-sizing: border-box; }
+
+body { background: var(--bg); color: var(--text); }
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #1f2633;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  background: #0f1a29;
+  border: 1px solid #1f2b3d;
+  border-radius: 10px;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+.cell.on { background: var(--primary); box-shadow: 0 0 20px rgba(106,163,255,0.5); }
+.cell.selected { outline: 2px solid var(--primary); }
+.cell.correct { background: rgba(47,211,122,0.85); box-shadow: 0 0 20px rgba(47,211,122,0.5); }
+.cell.incorrect { background: rgba(255,92,92,0.85); }
+.cell.missed { outline: 2px dashed var(--miss); }
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button.primary {
+  background: var(--primary);
+  color: #04101f;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+
+.legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.badge { padding: 4px 8px; border-radius: 6px; }
+.good { background: rgba(47,211,122,0.15); border: 1px solid rgba(47,211,122,0.4); }
+.bad { background: rgba(255,92,92,0.15); border: 1px solid rgba(255,92,92,0.4); }
+.miss { background: rgba(255,209,102,0.15); border: 1px solid rgba(255,209,102,0.4); }
